@@ -1,0 +1,8 @@
+
+@charset "ISO-8859-1";
+.required-field::after{ 
+  content: "*";
+  color: red;
+  
+
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Add Book</title>
+<link rel="stylesheet" type="text/css" href="astrich.css" />
+<link rel="stylesheet" type="text/css" href="drop_down_menu.css" />
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript"
+	src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<body style="background: url(image/m_library2.jpg)">
+	<div class="container text-center">
+		<!--<h6>Login successfully!</h6> -->
+	</div>
+	<div class="menu-bar">
+		<ul>
+			<li class="active"><a href="#">Home</a>
+				<div class="sub-menu-1"></div></li>
+			<!--  <li><a href="#">Add Book </a>-->
+			<li><a th:href="@{/addbook-form}">Add Book </a></li>
+			<!--  <div class="sub-menu-1"></div></li>-->
+			<li><a th:href="@{/bookslist}">Books List</a></li>
+			<!--  <div class="sub-menu-1"></div></li>-->
+			<li><a th:href="@{/usersList}">Users</a>
+				<div class="sub-menu-1"></div></li>
+			<li><a th:href="@{/bookRequests}">Book Requests</a>
+				<div class="sub-menu-1"></div></li>
+			<li><a th:href="@{/issuedBooks}">Issued Books</a>
+				<div class="sub-menu-1"></div></li>
+			<li><a th:href="@{/logout}">logout</a></li>
+		</ul>
+
+	</div>
+	<form
+		style="position: absolute; left: 400px; margin: 20px; width: 500px; padding: 16px; background-color: white;"
+		th:action="@{/create-book}"
+			th:object="${book}" method="post">
+		<div
+			class="m-0 p-0 bg-dark text-light text-center d-flex align-items-center justify-content-center"
+			style="height: 50px; font-size: 25px;">Add Book</div>
+
+		<!-- <div class="form-horizontal" role="form" th:action="@{/create-book}"
+			th:object="${book}" method="post"> -->
+			<div class="col-md-9 personal-info"></div>
+
+
+			<div class="required-field">Book Name</div>
+
+			<div class="form-group row">
+				<label class="col-4 col-form-label"></label>
+				<div class="col-8">
+					<input type="text" th:field="*{book_name}" class="form-control"
+						required minlength="2" maxlength="20" />
+				</div>
+			</div>
+			<div class="m-3">
+				<div class="required-field">Author</div>
+
+				<div class="form-group row">
+					<label class="col-4 col-form-label"></label>
+					<div class="col-8">
+						<input type="text" th:field="*{author}" class="form-control"
+							required minlength="2" maxlength="20" />
+					</div>
+				</div>
+			</div>
+			<div class="m-3">
+				<div class="required-field">Quantity</div>
+
+				<div class="form-group row">
+					<label class="col-4 col-form-label"></label>
+					<div class="col-8">
+						<input type="text" th:field="*{quantity}" class="form-control"
+							required minlength="2" maxlength="20" />
+					</div>
+				</div>
+
+
+
+
+				<br> 
+				<button type="submit" class="btn btn-primary">submit</button>
+				<input type="hidden" th:field="*{BID}" />
+				<div align="center">
+					<h4>
+						<a th:href="@{/home}">Back to Home</a><br> <br> <a
+							th:href="@{/bookslist}">Back to List</a>
+					</h4>
+				</div>
+			</div>
+			
+	</form>
+
+
+
+</body>
+
+</html>

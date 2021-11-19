@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body style="background: url(image/m_library2.jpg)">>
+
+<form style="position: absolute;
+left: 500px;
+margin: 20px;
+width : 500px;
+padding: 16px;
+background-color: white;" id="createaccount">
+<div class="m-0 p-0 bg-dark text-light text-center d-flex align-items-center justify-content-center" 
+style="height: 50px; font-size: 25px;"><p>
+			 <span th:text="${message}"></span>
+
+		</p></div>
+
+	
+	<div align="center">
+	<a th:href="@{/home}">Back to Home</a><br><br>
+	<a th:href="@{/bookslist}">Back to List</a></div>
+	</form>
+</body>
+</html>

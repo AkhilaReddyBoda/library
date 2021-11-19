@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>All Books</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="drop_down_menu.css" />
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="drop_down_menu.css" />
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+
+</head>
+<body>
+<body style="background: url(image/m_library2.jpg)">
+	<div class="container text-center"></div>
+	<div class="menu-bar">
+		<ul>
+			<li class="active"><a href="#">Home</a>
+				<div class="sub-menu-1"></div></li>
+			<li><a th:href="@{/bookslist}">View Books </a>
+				<div class="sub-menu-1"></div></li>
+			<li><a th:href="@{/myrequestedbookslist}">My Requested Books
+			</a>
+				<div class="sub-menu-1"></div></li>
+
+			<li><a th:href="@{/mybooks}">My Books </a>
+				<div class="sub-menu-1"></div></li>
+			<li><a th:href="@{/logout}">logout</a></li>
+
+
+		</ul>
+
+	</div>
+	<form style="position: absolute;
+left: 300px;
+margin: 20px;
+width : 800px;
+padding: 16px;
+background-color: white;" id="createaccount">
+<div class="m-0 p-0 bg-dark text-light text-center d-flex align-items-center justify-content-center" 
+style="height: 50px; font-size: 25px;">Requested Books</div>
+	<form class="form-horizontal" role="form" th:action="@{/books-list}"
+		th:object="${bookList}" method="get">
+		<div class="col-md-9 personal-info"></div>
+		
+
+		<div class="container my-2">
+			<div class="card">
+				<div class="card-body">
+					<div class="container my-5">
+						<div class="col-md-12">
+							<div>
+								<table class="table table-striped table-responsive-md">
+									<thead>
+										<tr>
+											<th>BID</th>
+											<th>Book Name</th>
+											<th>Author</th>
+											
+											<!--<th>quantity</th>-->
+
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="book: ${bookList}">
+											<td th:text="${book.BID}"></td>
+											<td th:text="${book.book_name}"></td>
+											<td th:text="${book.author}"></td>
+											<!--<td th:text="${book.quantity}"></td>-->
+											<td><a
+												th:href="@{/cancelrequestBook(bookId=${book.BID})}"
+												class="btn btn-info">Cancel Request</a></td> 
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div align="center">
+		<h6>
+			<a th:href="@{/home}">Or Goto home</a>
+		</h6>
+		</div>
+	</form>
+	</form>
+</body>
+
+</html>

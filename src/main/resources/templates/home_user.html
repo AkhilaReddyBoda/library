@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Success</title>
+<link rel="stylesheet" type="text/css" href="drop_down_menu.css" />
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+<body style="background: url(image/m_library2.jpg)">
+	<div class="container text-center"></div>
+	<div class="menu-bar">
+		<ul>
+			<li class="active"><a href="#">Home</a>
+				<div class="sub-menu-1"></div></li>
+			<li><a th:href="@{/bookslist}">View Books </a>
+				<div class="sub-menu-1"></div></li>
+			<li><a th:href="@{/myrequestedbookslist}">My Requested Books
+			</a>
+				<div class="sub-menu-1"></div></li>
+
+			<li><a th:href="@{/mybooks}">My Books </a>
+				<div class="sub-menu-1"></div></li>
+			<li><a th:href="@{/logout}">logout</a></li>
+
+
+		</ul>
+
+	</div>
+	<br>
+	<br>
+	<div align="center">
+		<marquee width="60%" direction="left" height="50px" scrollamount="12">
+			<h2 style="color: navy;">WELCOME :)</h2>
+		</marquee>
+
+	</div>
+
+	<!--  <a th:href="@{/logout}">Click here to Logout</a>
+	</h4>-->
+
+
+
+
+</body>
+</html>
